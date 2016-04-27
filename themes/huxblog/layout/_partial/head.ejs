@@ -46,6 +46,15 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Check If the url is "kaijun.rocks/blog", if yes redirect! -->
+    <script>
+        var href = window.location.href;
+        if(href.indexOf("<%= config.urlToBeRedirected %>")===0){
+            href = href.replace("<%= config.urlToBeRedirected %>", "<%= config.url + config.root %>");
+            window.location.href = href;
+        }
+    </script>
+
     <!-- ga & ba script hoook -->
     <script></script>
 </head>
